@@ -14,7 +14,7 @@ public class RpnEngineTest extends TestCase {
 	private RpnEngine engine = new RpnEngine(decimals);
 	
 	private String formatDouble(Double value) {
-		String returnValue = String.format("%." + decimals + "f", value);
+		String returnValue = String.format("%." + decimals + "g", value);
 		returnValue = returnValue.replaceFirst("0+$", "");
 		returnValue = returnValue.replaceFirst("\\.$", "");
 		return returnValue;
