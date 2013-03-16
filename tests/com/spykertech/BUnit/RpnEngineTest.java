@@ -104,4 +104,14 @@ public class RpnEngineTest extends TestCase {
 		expectedResult = "2540";
 		assertEquals(expectedResult, engine.pushPop("1000", rpnString));
 	}
+	
+	public void testOneTimesOneBillion() throws Exception {
+		String rpnString = "1000000000,*";
+		String expectedResult = "1000000000";
+		RpnEngine engine = new RpnEngine(decimals);
+		String result = engine.pushPop("1", rpnString);
+		logDebug("expected = " + expectedResult);
+		logDebug("result = " + result);
+		assertEquals(expectedResult, result);
+	}
 }
