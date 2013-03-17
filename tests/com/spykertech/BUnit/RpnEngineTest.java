@@ -86,7 +86,7 @@ public class RpnEngineTest extends TestCase {
 	}
 	
 	public void testInvalidRpnExpression() throws Exception {
-		String invalidRpnExpression = "six,-";
+		String invalidRpnExpression = "seven,-";
 		String startValue = "1";
 		String result = engine.pushPop(startValue, invalidRpnExpression);
 		invalidRpnExpression = String.format("%s,%s", startValue, invalidRpnExpression);
@@ -110,6 +110,16 @@ public class RpnEngineTest extends TestCase {
 		String expectedResult = "1000000000";
 		RpnEngine engine = new RpnEngine(decimals);
 		String result = engine.pushPop("1", rpnString);
+		logDebug("expected = " + expectedResult);
+		logDebug("result = " + result);
+		assertEquals(expectedResult, result);
+	}
+	
+	public void testRpnExpressionWithX() throws Exception {
+		String rpnString = "100,x,/";
+		String expectedResult = "20";
+		RpnEngine engine = new RpnEngine(decimals);
+		String result = engine.pushPop("5", rpnString);
 		logDebug("expected = " + expectedResult);
 		logDebug("result = " + result);
 		assertEquals(expectedResult, result);
