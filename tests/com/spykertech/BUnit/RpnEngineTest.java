@@ -124,4 +124,14 @@ public class RpnEngineTest extends TestCase {
 		logDebug("result = " + result);
 		assertEquals(expectedResult, result);
 	}
+	
+	public void testRpnExpressionWithEndingDecimalZeros() throws Exception {
+		String rpnString = "0.001,*";
+		String expectedResult = "0.001";
+		RpnEngine engine = new RpnEngine(decimals);
+		String result = engine.pushPop("1", rpnString);
+		logDebug("expected = " + expectedResult);
+		logDebug("result = " + result);
+		assertEquals(expectedResult, result);
+	}
 }
