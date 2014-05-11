@@ -5,8 +5,8 @@
     android:versionName="1.1" >
 
     <uses-sdk
-        android:targetSdkVersion="19"
-        android:minSdkVersion="11" />
+        android:minSdkVersion="7"
+        android:targetSdkVersion="19"/>
 
     <instrumentation
         android:name="android.test.InstrumentationTestRunner"
